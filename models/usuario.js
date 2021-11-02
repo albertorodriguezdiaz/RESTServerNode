@@ -34,4 +34,10 @@ const UsuarioSchema = Schema({
 
 });
 
+UsuarioSchema.methods.toJSON = function(){
+    // Quitar version y pasword y enviar todo lo demas en la variable usuario
+    const {__v, password, ...usuario} = this.toObject();
+    return usuario;
+}
+
 module.exports = model('Usuarios', UsuarioSchema);
