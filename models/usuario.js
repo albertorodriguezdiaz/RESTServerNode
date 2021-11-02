@@ -15,21 +15,21 @@ const UsuarioSchema = Schema({
         require: [true, 'El password es obligarorio'],
         unique: true
     },
-    img: {
-        type: String,
-    },
     rol: {
         type: String,
         require: true,
         emun: ['ADMIN_ROLE', 'USER_ROLE']
     },
+    img: {
+        type: String,
+    },
     estado: {
         type: Boolean,
-        require: true,
+        default: true
     },
     google: {
         type: Boolean,
-        require: false,
+        default: false
     },
 
 });
